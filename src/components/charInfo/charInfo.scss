@@ -1,0 +1,76 @@
+@import '../../style/variables.scss';
+
+.char-info {
+  padding: 25px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  width: 425px;
+  z-index: 5;
+  position: relative;
+  background-color: #ffffff;
+  &__header {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 15px;
+  }
+
+  &__img {
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 375px;
+    margin-bottom: 10px;
+  }
+
+  &__comics-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 10px;
+  }
+
+  &__comics-list {
+    max-width: 375px;
+  }
+
+  &__comics-item {
+    width: 100%;
+    padding: 4px 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__skeleton_disabled {
+    display: none;
+  }
+
+  &__skeleton-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}

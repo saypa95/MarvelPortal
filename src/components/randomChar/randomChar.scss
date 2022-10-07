@@ -1,0 +1,77 @@
+@import '../../style/variables.scss';
+
+.random-char {
+  display: flex;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+  &__dynamic {
+    padding: 35px;
+    padding-left: 40px;
+    display: flex;
+    width: 50%;
+  }
+
+  &__img {
+    width: 180px;
+    height: 180px;
+    object-fit: fill;
+  }
+
+  &__info {
+    margin-left: 30px;
+    max-width: 265px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  &__decription {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 13px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__static {
+    position: relative;
+    background-color: $dark;
+    padding: 35px;
+    padding-left: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    .button {
+      margin-top: 13px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #ffffff;
+    &:nth-child(2) {
+      margin-top: 33px;
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    bottom: 14px;
+    right: -37px;
+  }
+}

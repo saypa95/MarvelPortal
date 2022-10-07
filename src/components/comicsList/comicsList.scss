@@ -1,0 +1,25 @@
+@import '../../style/variables.scss';
+
+.comics-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 66px;
+}
+.comics-card {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  max-width: 225px;
+  &__img {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    margin-bottom: 5px;
+  }
+
+  &__price {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
