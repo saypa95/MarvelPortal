@@ -25,7 +25,6 @@ const Header = () => {
           /
           <li>
             <NavLink
-              end
               to="MarvelPortal/comics"
               className={({ isActive }) =>
                 "header__menu-list-item" + (isActive ? " header__menu-list-item_active" : "")

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import useMarvelService from "../../services/MarvelService";
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import "./charList.scss";
 
@@ -12,7 +13,7 @@ const CharList = (props) => {
   const [offset, setOffset] = useState(0);
   const [charsEnded, setCharsEnded] = useState(false);
 
-  const {getAllCharacters, loading, error} = useMarvelService();
+  const { getAllCharacters, loading, error } = useMarvelService();
 
   useEffect(() => {
     onRequest(offset, true);
@@ -43,22 +44,28 @@ const CharList = (props) => {
   };
 
   const renderList = (data) => {
-    return data.map((char, i) => {
-      return (
-        <a href="#charContent" key={char.id} ref={(el) => (cardRefs.current[i] = el)}>
-          <div
-            className="char-card"
-            onClick={() => {
-              props.onCharSelected(char.id);
-              toggleActiveCard(i);
-            }}
-          >
-            <img src={char.thumbnail} alt="charImg" />
-            <div className="char-card__name">{char.name}</div>
-          </div>
-        </a>
-      );
-    });
+    return (
+      <TransitionGroup component={null}>
+        {data.map((char, i) => {
+          return (
+            <CSSTransition key={char.id} timeout={500} classNames="char-card">
+              <a href="#charContent" ref={(el) => (cardRefs.current[i] = el)}>
+                <div
+                  className="char-card"
+                  onClick={() => {
+                    props.onCharSelected(char.id);
+                    toggleActiveCard(i);
+                  }}
+                >
+                  <img src={char.thumbnail} alt="charImg" />
+                  <div className="char-card__name">{char.name}</div>
+                </div>
+              </a>
+            </CSSTransition>
+          );
+        })}
+      </TransitionGroup>
+    );
   };
 
   const list = renderList(charList);
